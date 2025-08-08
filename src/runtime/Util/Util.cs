@@ -40,7 +40,6 @@ namespace Python.Runtime
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal unsafe static T* ReadPtr<T>(BorrowedReference ob, int offset)
-            where T: unmanaged
         {
             Debug.Assert(offset >= 0);
             IntPtr ptr = Marshal.ReadIntPtr(ob.DangerousGetAddress(), offset);

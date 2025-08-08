@@ -471,7 +471,7 @@ namespace Python.Runtime
             Marshal.FreeHGlobal(address);
             address = IntPtr.Zero;
         }
-        static unsafe IntPtr ToUnmanaged<T>(T[] array) where T : unmanaged
+        static unsafe IntPtr ToUnmanaged<T>(T[] array)
         {
             IntPtr result = Marshal.AllocHGlobal(checked(Marshal.SizeOf(typeof(T)) * array.Length));
             fixed (T* ptr = array)
